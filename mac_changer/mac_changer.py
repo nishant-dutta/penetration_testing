@@ -24,7 +24,7 @@ def change_mac(interface, new_mac_address):
         print(f"[-] Interface {interface} already has address {new_mac_address}. Exiting ...")
         sys.exit(1)
 
-    print("[+] Changing mac address: " + get_mac_address(interface) + " -> " + new_mac_address)
+    print(f"[+] Changing mac address: {get_mac_address(interface)} -> {new_mac_address} for interface: {interface}")
 
     subprocess.run(["ifconfig", interface, "down"])
     subprocess.run(["ifconfig", interface, "hw", "ether", new_mac_address])
